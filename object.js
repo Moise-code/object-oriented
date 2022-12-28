@@ -59,7 +59,37 @@ class userrr {
         return this;
     }
 }
+class Admin extends userrr{
+
+    deleteUser(user){
+        users = users.filter((u) =>{
+            return u.name !== user.name;
+        })
+
+    }
+
+}
+
 const userrr1 = new userrr('Byiringiro','mbyiringiro18@gmail.com',34);
 const userrr2 = new userrr('Kagabo', 'moisewowe@gmail.com', 63);
+const userrr3 = new Admin('Mwemere', 'hakurikiye@gmail.com', 778);
+
 
 userrr1.login().logout();
+let users = [userrr1, userrr2, userrr3];
+console.log(users);
+userrr3.deleteUser(userrr2);
+console.log(users)
+
+// this is the variable that we are calling in the deleteUser method.
+
+
+
+// now we are going to the inheritance with the classes right
+// subclasses are the classes that inherites some of the functionalities of the parent class or any other class and be able to contain some new methods.
+// for example lets say that you are going to create the new user who is the admin there fore the admin class is going to have the same properties and the 
+// the methods as the normal user but in addition, he will have to add some new method on his list like deleting method
+// therefore to create the inheritance among the classes we just use the extends keyword to them.
+// 
+
+
