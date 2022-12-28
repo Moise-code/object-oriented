@@ -60,6 +60,12 @@ class userrr {
     }
 }
 class Admin extends userrr{
+    // we want to add a new constructor in this class but we want also to keep using the constructor in the userrr class 
+    // therefore, we must first add the arguments in the userrr constructor and then add a new argument we want to use then, we user super keyword to refer to the added constructor argument form the userrr class
+    constructor(name, email,age ,title){
+        super(name, email,age);
+        this.title = title;
+    }
 
     deleteUser(user){
         users = users.filter((u) =>{
@@ -72,7 +78,7 @@ class Admin extends userrr{
 
 const userrr1 = new userrr('Byiringiro','mbyiringiro18@gmail.com',34);
 const userrr2 = new userrr('Kagabo', 'moisewowe@gmail.com', 63);
-const userrr3 = new Admin('Mwemere', 'hakurikiye@gmail.com', 778);
+const userrr3 = new Admin('Mwemere', 'hakurikiye@gmail.com', 778, 'black panther');
 
 
 userrr1.login().logout();
@@ -80,6 +86,7 @@ let users = [userrr1, userrr2, userrr3];
 console.log(users);
 userrr3.deleteUser(userrr2);
 console.log(users)
+console.log(userrr3);
 
 // this is the variable that we are calling in the deleteUser method.
 
@@ -90,6 +97,6 @@ console.log(users)
 // for example lets say that you are going to create the new user who is the admin there fore the admin class is going to have the same properties and the 
 // the methods as the normal user but in addition, he will have to add some new method on his list like deleting method
 // therefore to create the inheritance among the classes we just use the extends keyword to them.
-// 
+// now we are going to add only new properties in the admin class to do that we need to add new constructor in that class.
 
 
