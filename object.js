@@ -36,25 +36,30 @@
 
 // now lets associate the methods on our object here we dont declare them in the constructor instead we declare them after the constructor in addition inside class we dont comma separate the methods
 
-class User {
-    constructor(name, age){
-        this.username = name;
-        this.age = age;
+// now we are going to do the so called method chaining//
+// this is all about calling the two method once on the same user.
+// remember to chain the methods you just go ahead and first return the methods and then be able to chain them together at the end.
+
+
+class userrr {
+    constructor(name, email, age){
+        this.name = name;
+        this.email = email;
+        this.age = age
     }
 
+    // we are going to add the methods then to the class here//
+    // then to chain the methods while calling them we shall return the this keyword
     login(){
-      // here we are going to assing the name and the email of the user to this method.
-      console.log(`the person who is called ${this.username}, with ${this.age} years old logged inside successfully.`)
-
-
+        console.log(`the user who goes by the name ${this.name} with the email: ${this.email} has ${this.age} years old`);
+        return this;
     }
     logout(){
-        console.log(`the person who is called ${this.username}, with ${this.age} years old is logged out successfully.`);
+        console.log(`the user who goes by the name ${this.name} with the email address: ${this.email} has ${this.age} years old y'all and he has logged out successfully`);
+        return this;
     }
 }
-const UserOne = new User('Moise','60 years');
-const UserTwo = new User('Byiringiro', '70 years old');
+const userrr1 = new userrr('Byiringiro','mbyiringiro18@gmail.com',34);
+const userrr2 = new userrr('Kagabo', 'moisewowe@gmail.com', 63);
 
-console.log(UserOne, UserTwo);
-console.log(UserOne.login());
-console.log(UserTwo.logout());
+userrr1.login().logout();
