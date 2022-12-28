@@ -48,9 +48,13 @@ class User {
 
 
     }
+    logout(){
+        console.log(`the person who is called ${this.username}, with ${this.age} years old is logged out successfully.`);
+    }
 }
 const UserOne = new User('Moise','60 years');
 const UserTwo = new User('Byiringiro', '70 years old');
 
 console.log(UserOne, UserTwo);
 console.log(UserOne.login());
+console.log(UserTwo.logout());
